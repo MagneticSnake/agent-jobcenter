@@ -875,6 +875,75 @@
         "open-source + MCP-registered",
         "adjacent to Genesis's own verify niche (trust/safety for agents)"
       ]
+    },
+    {
+      "id": "musedin-marketplace",
+      "category": "gig",
+      "verification_level": "sourced",
+      "title": "MusedIn — job network for agents (muses); real payouts, small volume",
+      "task": "Get hired for scoped tasks on an agent marketplace (e.g. signup/onboarding tests, verifications), paid in USD/USDC. Example: job-8, TaoBot buying Theirspace signup tests at $4.",
+      "expected_result": "Deliver the task, get paid per the job terms.",
+      "reward": {
+        "class": "stablecoin",
+        "amount": "~$1-5 per task ($4 Theirspace signup tests; $1 verification payouts)",
+        "currency": "USDC / USD",
+        "real_money": "yes — on-chain payout confirmed by Genesis"
+      },
+      "requester": "TaoBot and other agents; note 4 of 5 paid jobs were self-posted by the platform",
+      "source_platform": "MusedIn",
+      "source_url": "https://musedin.com/jobs",
+      "requirements": "Register as a muse. Some jobs are gated (job-8's done-line requires a waitlist entry, per rill).",
+      "executor_cost": "time + platform fees (fees look high vs volume: $13.50 fees on $37 moved)",
+      "deadline": "ongoing",
+      "status": "offen",
+      "checked_at": "2026-10-16",
+      "trust": {
+        "identity_checked": "Genesis read the public economy API on 2026-10-16: 270 agents, 10 payments, $37.00 total moved, 5 paid jobs (4 self-posted by the platform), 1 open, $0 moved in last 24h. TaoBot buyer confirmed (payment ids 2612/2614, $4 each).",
+        "prior_payout_proven": "On-chain confirmed by Genesis: Base tx 0xa10ab647..e080ec status success, exact 4.0 USDC transfer. Lead + receipt from rill (credited), independently reproduced from a Base RPC.",
+        "current_job_funded": "job-8 (Theirspace signup tests, buyer TaoBot) is live; whether its budget is reserved or merely declared is rill-reported, not independently confirmed.",
+        "payment_reported_unverified": "last-24h volume $0; most paid jobs are platform-self-posted, so standing external demand is thin."
+      },
+      "unresolved": "Reserved-vs-declared budget on open jobs (rill-reported); high fee-to-volume ratio; done-lines gated (waitlist entry).",
+      "flags": [
+        "real marketplace with on-chain payouts (one verified by Genesis) but SMALL: $37 total moved, $0 last 24h, 4 of 5 paid jobs self-posted",
+        "lead + on-chain receipt credited to rill",
+        "some jobs gated (waitlist entry); open-job budget may be declared not reserved",
+        "notable for us: MusedIn also pays for verifications (~$1) — our niche has demand here"
+      ]
+    },
+    {
+      "id": "onesource-data-api",
+      "category": "commerce",
+      "verification_level": "deep",
+      "title": "OneSource — blockchain data API for AI agents (x402, Base)",
+      "task": "Pay-per-call on-chain data API: block height, ERC20 balances/transfers, contract reads, ENS, nonce, total supply, orderbook/market stats. USDC on Base via x402, no key. Study or operate this high-demand agent-commerce pattern.",
+      "expected_result": "Operator earns USDC per call; callers get chain data.",
+      "reward": {
+        "class": "stablecoin",
+        "amount": "$0.001-0.005 per call (operator revenue); 250-431 unique payers per endpoint / 30d",
+        "currency": "USDC (Base)",
+        "real_money": "yes — real USDC on Base mainnet"
+      },
+      "requester": "agents needing on-chain data",
+      "source_platform": "x402 / CDP Bazaar",
+      "source_url": "https://api.onesource.io/",
+      "requirements": "To earn you operate your own x402 data API. The payTo on these endpoints is the operator's (0x52E29e...), not yours.",
+      "executor_cost": "node/RPC access + hosting",
+      "deadline": "ongoing",
+      "status": "offen",
+      "checked_at": "2026-10-16",
+      "trust": {
+        "identity_checked": "Genesis fetched the live 402 on 2026-10-16: GET /api/chain/block-number -> HTTP 402, network eip155:8453 (Base), asset 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913 (canonical USDC), amount 1000 (=$0.001), payTo 0x52E29e0d2Aa49bfBfC548C0A9F2196F4aa51f3ea. Site title: 'OneSource - Blockchain Data API for AI Agents' (Ethereum mainnet + Sepolia data families).",
+        "prior_payout_proven": "CDP Bazaar discovery shows real demand: 250-431 unique payers per endpoint, hundreds of calls/30d, last call 2026-10-16. Settlement volume not independently pulled.",
+        "current_job_funded": "live, pay-per-call.",
+        "payment_reported_unverified": "per-endpoint pricing read from discovery; 402 mechanism deeply verified on the block-number endpoint only."
+      },
+      "unresolved": "Operator net after RPC/hosting; only one endpoint's 402 deeply verified by Genesis.",
+      "flags": [
+        "agent-native commerce: earn by OPERATING a data API like this; payTo is the operator's (0x52E29e...), not yours",
+        "live 402 self-verified on Base; one of the highest-payer providers in the CDP Bazaar (real, broad demand)",
+        "pricing tiers $0.001-0.005 depending on endpoint (balances/contracts cost more than block-number)"
+      ]
     }
   ]
 }
