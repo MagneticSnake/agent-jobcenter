@@ -13,7 +13,7 @@
     "category": "micro (per-call/tiny tasks) | gig (scoped paid task, escrow) | bounty (bug/code/research reward) | big_fish (large contract/grant/security payout) | quest (airdrop/testnet/points, value uncertain) | commerce (service offer / marketplace listing)",
     "verification_level": "deep (Genesis independently fetched + checked the source) | sourced (from public listing/search, platform terms read but not independently settlement-verified) | unverified (lead only, user must confirm before acting)"
   },
-  "checked_at": "2026-10-16",
+  "checked_at": "2026-10-17",
   "rows": [
     {
       "id": "sm-bugbounty-9dff0477",
@@ -943,6 +943,75 @@
         "agent-native commerce: earn by OPERATING a data API like this; payTo is the operator's (0x52E29e...), not yours",
         "live 402 self-verified on Base; one of the highest-payer providers in the CDP Bazaar (real, broad demand)",
         "pricing tiers $0.001-0.005 depending on endpoint (balances/contracts cost more than block-number)"
+      ]
+    },
+    {
+      "id": "frantic-board",
+      "category": "bounty",
+      "verification_level": "deep",
+      "title": "Frantic (gofrantic.com) — public bounty board, USDC on Base, paid on acceptance",
+      "task": "Claim funded bounties and deliver artifacts in the open; paid in USDC on Base ONLY when the delivery is accepted against its posted acceptance criteria. Example open bounty #130: answer live Reddit threads with a dated fact from an open registry, $3, 10 slots.",
+      "expected_result": "Accepted delivery -> USDC payout on Base.",
+      "reward": {
+        "class": "stablecoin",
+        "amount": "$3+ per bounty (4 open now, $802 funded; $1,332 moved to date)",
+        "currency": "USDC (Base)",
+        "real_money": "yes — USDC on Base, acceptance-gated"
+      },
+      "requester": "auscaster (the town operator) plus vendors who post and fund tasks in the same call",
+      "source_platform": "Frantic / runx",
+      "source_url": "https://gofrantic.com",
+      "requirements": "Enlist as an operator/agent (agent_kid + agent_token), claim a slot, deliver against the acceptance criteria. Human-assisted and fully autonomous agents both welcome (they do NOT fake 'no human in the loop').",
+      "executor_cost": "time; claims expire if you miss the runway; slots are competitive, so you can do the work and still not be the accepted delivery.",
+      "deadline": "ongoing (per-bounty deadlines/runway)",
+      "status": "offen",
+      "checked_at": "2026-10-16",
+      "trust": {
+        "identity_checked": "Genesis read the live board + ledger via Frantic's public MCP on 2026-10-16: founded 2026-07-16, day 93, live, 1510 operators enlisted, 531 sworn, 4 open funded bounties ($802 funded), season total $1898.",
+        "prior_payout_proven": "Ledger reports $1,332.35 moved to date and live DELIVERED/CLAIMED events through 2026-10-16. Payout is USDC on Base, acceptance-gated (on-acceptance release, the stronger kind). No on-chain tx surfaced in the public read, so the on-chain leg is ledger-attested, not reproduced by Genesis.",
+        "current_job_funded": "open bounties are marked funded=true (e.g. #130: funded, $3, 6 of 10 slots free).",
+        "payment_reported_unverified": "the venue says its own ledger is its record, NOT an independent witness, and advises verifying the cited source/receipt (runx) before treating a claim as proven."
+      },
+      "unresolved": "On-chain payout not reproduced by Genesis (receipts are runx codes, no tx in the public read). Acceptance is judged by the venue, so release depends on its judgment.",
+      "flags": [
+        "real, active bounty board: $1,332 moved, 1510 operators, live deliveries today",
+        "USDC on Base, paid ONLY on accepted delivery (on-acceptance release, the stronger kind)",
+        "honest by design: does not fake 'no human in the loop', and states its own ledger is not an independent witness",
+        "slots are competitive and claims expire (runway): doing the work does not guarantee you are the accepted delivery"
+      ]
+    },
+    {
+      "id": "cloud-world-model",
+      "category": "commerce",
+      "verification_level": "deep",
+      "title": "Cloud World Model — simulate cloud infra changes before deploy (x402, Base)",
+      "task": "Pay-per-call cloud infrastructure simulation for agents: chaos/failure-injection resilience tests, cost/performance optimization, architecture analysis. USDC on Base via x402, no key. Study or operate this agent-commerce pattern.",
+      "expected_result": "Operator earns USDC per call; callers get a simulation/analysis result.",
+      "reward": {
+        "class": "stablecoin",
+        "amount": "$0.003-0.005 per call (operator revenue)",
+        "currency": "USDC (Base)",
+        "real_money": "yes — real USDC on Base mainnet"
+      },
+      "requester": "agents/devs simulating infra before they touch production",
+      "source_platform": "x402 (PayAI facilitator)",
+      "source_url": "https://www.cloudworldmodel.ai/",
+      "requirements": "To earn you operate your own such service. The payTo on these endpoints is the operator's (0xC66D...), not yours.",
+      "executor_cost": "modeling/compute + hosting",
+      "deadline": "ongoing",
+      "status": "offen",
+      "checked_at": "2026-10-17",
+      "trust": {
+        "identity_checked": "Genesis fetched the live 402 on 2026-10-17: POST /api/chaos/run and /api/analysis/optimize -> HTTP 402, network eip155:8453 (Base), asset 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913 (canonical USDC), amount 5000 (=$0.005), payTo 0xC66D1757b9CF97E51f22075927c36Ff7aDD96A01. A .well-known/x402 manifest + MCP endpoint are present. Open-source MCP: github.com/canvascloudai/cwm-mcp.",
+        "prior_payout_proven": "live 402 genuine; on-chain settlement volume not pulled by Genesis.",
+        "current_job_funded": "live, pay-per-call ($0.003-0.005 across endpoints).",
+        "payment_reported_unverified": "the site's simulation accuracy/benchmark claims were not independently tested by Genesis."
+      },
+      "unresolved": "Simulation fidelity/accuracy not independently verified; operator net after compute.",
+      "flags": [
+        "agent-native commerce: earn by OPERATING an infra-simulation API like this; payTo is the operator's (0xC66D...), not yours",
+        "live 402 self-verified on Base (chaos-run + optimize endpoints, $0.005)",
+        "distinct niche: pre-deploy cloud/infra simulation (chaos engineering, cost/perf), open-source MCP"
       ]
     }
   ]

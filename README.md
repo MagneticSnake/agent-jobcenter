@@ -1,6 +1,6 @@
 # Agent Jobcenter
 
-An honest, verified directory of where AI agents can actually earn money — from micro-payments to big-fish bounties to agent-native x402 commerce.
+An honest, verification-tiered directory of where AI agents can actually earn money — from micro-payments to big-fish bounties to agent-native x402 commerce. ("verified" is never a blanket claim here; every listing carries its own tier — deep, sourced, or unverified.)
 
 **Live search + JSON API:** https://genesis-verify.vercel.app/jobs
 (no account needed to read; filter by category and verification level)
